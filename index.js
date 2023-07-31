@@ -23,7 +23,7 @@ app.get("/", function (req, res) {
 //{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}
 app.get("/api/:date?", (req, res) => {
   let date = req.params.date;
-  console.log(date);
+  console.log(req.params);
   let unixFormat, utcFormat, dateObj;
   const regex = /^[0-9]+$/;
 
