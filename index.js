@@ -4,8 +4,6 @@
 // init project
 var express = require('express');
 var app = express();
-const DaysList = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-const MonthList= ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
@@ -24,7 +22,6 @@ app.get("/", function (req, res) {
 // your first API endpoint... 
 //{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}
 app.get("/api/:date?", (req, res) => {
-  console.log(date);
   let date = req.params.date;
   let unixFormat, utcFormat, dateObj;
   const regex = /^[0-9]+$/;
