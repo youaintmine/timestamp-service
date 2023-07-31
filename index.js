@@ -23,6 +23,7 @@ app.get("/", function (req, res) {
 //{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}
 app.get("/api/:date?", (req, res) => {
   let date = req.params.date;
+  console.log(date);
   let unixFormat, utcFormat, dateObj;
   const regex = /^[0-9]+$/;
 
@@ -39,7 +40,8 @@ app.get("/api/:date?", (req, res) => {
   }
 
   if(dateObj.toString() === 'Invalid date'){
-    res.send({ error : "Invalid Date" })
+    res.json({ error : "Invalid Date" });
+    return;
   }
 
   unixFormat = dateObj.getTime();
