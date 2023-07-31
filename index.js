@@ -40,6 +40,7 @@ app.get("/api/:date?", (req, res) => {
   }
 
   if(dateObj.toString() === 'Invalid date'){
+    console.log("input error");
     res.json({ error : "Invalid Date" });
     return;
   }
